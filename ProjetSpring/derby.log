@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Aug 02 15:32:11 WAT 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0164-fb0d-9f44-0000175b51b8 
+on database directory memory:C:\Users\n.asfour\Git\SoftEvalQuizz\ProjetSpring\testdb with class loader sun.misc.Launcher$AppClassLoader@659e0bfd 
+Loaded from file:/C:/Users/n.asfour/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_161-b12
+user.dir=C:\Users\n.asfour\Git\SoftEvalQuizz\ProjetSpring
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
