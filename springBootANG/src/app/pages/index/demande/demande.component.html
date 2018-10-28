@@ -1,0 +1,123 @@
+
+<div class="card">
+  <div class="profile-wrap animated fadeIn">
+    <div class="info-wrap">
+
+
+        <!--<project-list></project-list>-->
+        <style type="text/css">
+          .box
+          {
+            width:350px;
+            margin:50px auto auto auto;
+            border:1px solid #dedede;
+            border-radius:5px;
+            padding:20px;
+          }
+
+          .center
+          {
+            text-align:center;
+          }
+
+          .margin-right-10
+          {
+            margin-right:10px;
+          }
+        </style>
+        <div class="box">
+          <div>
+            <label for="fname"><b>Ajouter une demande</b></label>
+
+              <input type="text" id="fname" placeholder="votre demande" [(ngModel)]="demande.titre" required="required">
+            </div>
+            <div>
+      <br> <br>
+              <label for="fname">Projet:</label>
+              <div include="form-input-select()">
+                <select required  [(ngModel)]="idProjet" >
+
+                  <option [value]="undefined" disabled>choisir votre projet</option>
+                  <!-- normal options -->
+                  <option [value]="project.id"  *ngFor="let project of list_project_select">{{project.nom}}</option>
+                </select>
+              </div>
+              <label for="fname">Profile:</label>
+              <div include="form-input-select()">
+                <select required [(ngModel)]="profil_index" >
+                  <option [value]="undefined" disabled>choisir votre profil</option>
+                  <!--  normal options -->
+                  <option  [value]="profil.nompro" *ngFor="let profil of list_profil_select" >{{profil.nompro}}</option>
+
+                </select>
+              </div>
+              <label for="fname">Niveau:</label>
+              <div include="form-input-select()">
+                <select required [(ngModel)]="niveau_index" >
+                  <option [value]="undefined" disabled>choisir niveau profile</option>
+                  <!-- normal options -->
+                  <option [value]="niveau.nom" *ngFor="let niveau of list_niveau_select">{{niveau.nom}}</option>
+
+                </select>
+              </div>
+            </div>
+          <br>
+          <div align="center">
+            <button pButton label="Technologies" class="bouton5" (click)="onSubmit(profil_index,niveau_index)"></button>
+          </div>
+        </div>
+      <br><br><br><br><br><br>
+            <p-dataView #dv [value]="technologies" [paginator]="true" [rows]="20" paginatorPosition="both" filterBy="brand">
+              <p-header>
+                <div class="ui-helper-clearfix">
+                  <div class="ui-g">
+                    <div class="ui-g-6 ui-md-4" style="text-align:right">
+                      <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                    </div>
+                  </div>
+                </div>
+              </p-header>
+              <ng-template let-tech pTemplate="listItem">
+                <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
+                  <div class="ui-g-12 ui-md-3" style="text-align:center">
+                    <img src="assets/images/logo-Orange.png" width="20%" height="20%">
+                  </div>
+                  <div class="ui-g-12 ui-md-8 car-details">
+                    <div class="ui-g">
+                      <div class="ui-g-2 ui-sm-6">Nom: </div>
+                      <div class="ui-g-10 ui-sm-6"><b>{{tech.nom}}</b></div>
+
+                      <div class="ui-g-2 ui-sm-6">pourcentage: </div>
+                      <div class="ui-g-10 ui-sm-6"><b>{{tech.prcntg}}</b></div>
+                    </div>
+                  </div>
+
+                </div>
+              </ng-template>
+              <ng-template let-tech pTemplate="gridItem">
+                <div style="padding:.5em" class="ui-g-12 ui-md-3">
+                  <p-panel [header]="tech.nom" [style]="{'text-align':'center'}">
+                    <img src="assets/images/logo-Orange.png" width="60">
+                    <div class="car-detail">{{tech.prcntg}}</div>
+                    <hr class="ui-widget-content" style="border-top:0">
+                    <button pButton type="button" icon="pi pi-search"  (click)="selectTech($event, tech.nom)"  style="margin-top:0"></button>
+                  </p-panel>
+                </div>
+              </ng-template>
+            </p-dataView>
+
+            <p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" width="225" (onAfterHide)="onDialogHide()">
+              <div class="ui-g" *ngIf="selectedTech">
+                <div class="ui-g-12" style="text-align:center">
+                  <img src="assets/images/logo-Orange.png">
+                </div></div>
+            </p-dialog>
+      <br> <br>
+      <div align="center">
+            <button class="bouton13" (click)="addDemande()" >Affecter Candidats</button>
+      </div>
+            <!--<button class="button" (click)="addDemande()" [routerLink]="['candidats',project_index,profil_index,niveau_index,idDemandeCourant]" >Generer Candidats</button>
+            <!--"quests"
+            <button class="button"  routerLink="quests">Choisir Candidat</button>
+            <button class="button"  [routerLink]="['quests',project_index,profil_index,niveau_index]" (click)="selectProject()">Generer questions</button>
+-->

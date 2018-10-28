@@ -1,0 +1,79 @@
+<h1>Project</h1>
+<div *ngFor="let pr of projects" style="width: 300px;">
+  <div>
+    <label>Name: </label> {{pr.nom}}
+  </div>
+  <div>
+    <label>id: </label> {{pr.id}}
+  </div>
+  <hr/>
+  <div *ngFor="let p of pr.profiles"   style="width: 300px;">
+    <div>
+      <label>NamePro: </label> {{p.nompro}}
+    </div>
+    <div>
+      <label>idPro: </label>
+    </div>
+  </div>
+</div>
+<div *ngFor="let d of project"   style="width: 300px;">
+  <div>
+    <label>NamePro2: </label> {{d.nompro}}
+  </div>
+  <div>
+    <label>idPro2: </label>
+  </div>
+</div>
+
+<div class="ui-g-12 ui-md-4">
+  <div class="ui-inputgroup">
+    <input type="text" pInputText placeholder="entrer votre description">
+    <button pButton type="button" icon="fa fa-superpowers" class="ui-button-warn"></button>
+  </div>
+
+</div>
+
+<!--<div>
+  <form (ngSubmit)="onSubmit(project_index,profil_index,niveau_index)">
+<div>
+  <p-dropdown [options]="list_project" [(ngModel)]="project_index" placeholder="choisir un projet" editable="true"  [showClear]="true"  name="choix_projet"></p-dropdown>
+  <p>Projet Choisi: {{project_index || 'none'}}</p>
+</div>
+<div>
+  <p-dropdown [options]="list_profil" [(ngModel)]="profil_index" placeholder="choisir un profil" [showClear]="true" name="choix_profile"></p-dropdown>
+  <p>Projet Choisi: {{profil_index ? profil_index : 'none'}}</p>
+</div>
+<div>
+  <p-dropdown [options]="list_niveau" [(ngModel)]="niveau_index" placeholder="choisir un niveau" [showClear]="true" name="choix_niveau"></p-dropdown>
+  <p>Niveau Choisi: {{niveau_index ? niveau_index : 'none'}}</p>
+</div>
+
+<button pButton type="submit" label="Warning" class="ui-button-raised ui-button-warning" ></button>
+  </form>
+</div>-->
+
+<div *ngFor="let pr of projectData" style="width: 300px;">
+  <div>
+    <label>Name: </label> {{pr.nom}}
+  </div>
+  <div>
+    <label>id: </label> {{pr.id}}
+  </div>
+  <hr/>
+  <div *ngFor="let p of pr.profiles"   style="width: 300px;">
+    <div>
+      <label>NamePro: </label> {{p.nompro}}
+    </div>
+    <div>
+      <label>idPro: </label>
+    </div>
+  </div>
+</div>
+<div *ngFor="let d of project"   style="width: 300px;">
+  <div>
+    <label>NamePro2: </label> {{d.nompro}}
+  </div>
+  <div>
+    <label>idPro2: </label>
+  </div>
+</div>

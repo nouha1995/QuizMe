@@ -1,0 +1,27 @@
+
+.pages-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+.pages-body {
+
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  background: transparent;
+  overflow-x: hidden;
+  .pages-content {
+
+    padding: 15px;
+    flex: 1;
+    background: transparent;
+    border-left: 1px solid rgba(#000, .1);
+    border-top: 1px solid rgba(#000, .1);
+    color: #26253c;
+    overflow-x: hidden;
+  }
+}

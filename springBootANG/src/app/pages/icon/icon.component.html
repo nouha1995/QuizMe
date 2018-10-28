@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+  <meta charset="utf-8" />
+  <title>ng-model, ng-options, ng-disabled, ng-change, ng-src et ng-href</title>
+
+  <script src="https://code.angularjs.org/1.4.6/angular.min.js"></script>
+  <script src="main.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <style type="text/css">
+    .box
+    {
+      width:350px;
+      margin:50px auto auto auto;
+      border:1px solid #dedede;
+      border-radius:5px;
+      padding:20px;
+    }
+
+    .center
+    {
+      text-align:center;
+    }
+
+    .margin-right-10
+    {
+      margin-right:10px;
+    }
+  </style>
+</head>
+<body data-ng-controller="main-controller">
+<div class="box">
+  <form name="frm" class="form">
+    <div class="form-group">
+      <label for="s-nationality">Nationality:</label>
+      <select id="s-nationality" class="form-control" required="required"></select>
+    </div>
+    <div class="form-group">
+      <label for="tb-name">Name:</label>
+      <input type="tb-name" class="form-control" type="text" required="required" />
+    </div>
+    <div class="form-group">
+      <label for="tb-age">Age:</label>
+      <input type="tb-age" class="form-control" type="number" required="required" />
+    </div>
+    <div class="form-group">
+      <label for="s-nationalit">Gender:</label>
+      <div class="radio">
+        <label>
+          <input type="radio" name="rb-gender" value="Male" required="required" />
+          Male
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="rb-gender" value="Female" required="required" />
+          Female
+        </label>
+      </div>
+    </div>
+    <div class="center">
+      <button class="btn btn-primary">Envoyer</button>
+    </div>
+  </form>
+</div>
+
+<div class="box">
+  <div>Name: <strong></strong></div>
+  <div>Age: <strong></strong></div>
+  <div>Nationality: <strong></strong></div>
+  <div>Gender: <strong></strong></div>
+</div>
+</body>
+</html>

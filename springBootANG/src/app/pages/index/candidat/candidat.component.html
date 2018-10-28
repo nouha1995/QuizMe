@@ -1,0 +1,62 @@
+
+<br>
+<br>
+<table>
+  <tr>
+    <td class="td2">
+<div class="dropdown" (mouseleave)="hideDropdown()">
+  <div id="myDropdown" class="dropdown-content" >
+    <div class="ui-inputgroup" >
+      <input type="text"  pInputText placeholder="mail" id="myInput" (keyup)="showDropdown()" [(ngModel)]="candidatFilter.mail" >
+    </div>
+    <div >
+      <a role="button" *ngFor="let candidat of candidats | filterBy: candidatFilter" (click)=selectCandidat(candidat)>{{ candidat.mail }}({{candidat.status}})</a>
+
+      <!--<a  *ngIf="(candidats | filterBy: candidatFilter).length === 0">No matching elements</a>-->
+    </div>
+  </div>
+</div>
+<br><br><br><br><br><br><br>
+
+<div class="dropdown" >
+  <div id="myDropdown" class="dropdown-content" >
+    <div class="ui-inputgroup" >
+      <input type="text"  pInputText placeholder="entrer mail" id="myInput1" [(ngModel)]="addedCandidat.mail">
+      <input type="text"  pInputText placeholder="entrer nom" id="myInput1" [(ngModel)]="addedCandidat.login" >
+
+      <button pButton type="button" label="Ajouter" (click)="addCandidat()"></button>
+    </div>
+  </div>
+</div>
+    </td>
+<br>
+<br><br><br><br><br><br><br>
+<br>
+<br>
+<br>
+<br>
+
+<td class="td1" >
+
+  <div class="row">
+    <div class="div1" *ngFor="let cand of selectedCandidat">
+
+<tr class="ovale">
+  <td class="carre"><button class="td3"></button> </td>
+  <td>
+    <tr>
+    mail : {{cand.mail}}</tr>
+  <tr> login : {{cand.login}}</tr></td>
+   </div>
+    </div><br> <br><br> <br>
+  </td></tr><br></table> <br>
+<br>
+  <!--
+<div class="row">
+  <div class="column" *ngFor="let cand of selectedCandidat">
+    <h2>mail : {{cand.mail}}</h2>
+    <p>login : {{cand.login}}</p>
+  </div>
+</div></td></tr></table>
+<br> -->
+<button class="button" [routerLink]="['/pages/index/quests',project_index,profil_index,niveau_index]" routerLinkActive="active">Generer Question</button>
